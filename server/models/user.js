@@ -61,7 +61,6 @@ UserSchema.methods.comparePassword = function (candidatePassword){
     });
 };
 
-
 UserSchema.methods.gravatar = function (size) {
     if (!this.size) size = 200;
     if (!this.email) {
