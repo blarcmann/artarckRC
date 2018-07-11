@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// const bcrypt = require('bcrypt-nodejs');
 const bcrypt = require('bcryptjs');
 const crypto = require('crypto');
 
@@ -31,25 +30,33 @@ const UserSchema = new Schema({
     }
 });
 
-UserSchema.pre('save', function (next) {
-    var user = this;
+// UserSchema.pre('save', function (next) {
+//     var user = this;
+//     if (!user.isModified('password')) return next();
 
-    if (!user.isModified('password')) return next();
+//     bcrypt.hash(this.password, 10, (err, hash) => {
+//         if (err) {
+//             return next(err);
+//         }
+//         this.password = hash;
+//         next();
+//     });
+// });
 
+
+UserSchema.pre("save", function (next) {
     bcrypt.hash(this.password, 10, (err, hash) => {
-        if (err) {
-            return next(err);
-        }
         this.password = hash;
         next();
     });
 });
 
-
-// UserSchema.pre('update', function (next) {
-
-// })
-
+UserSchema.pre("update", function (next) {
+    bcrypt.hash(this.password, 10, (err, hash) => {
+        this.password = hash;
+        next();
+    });
+});
 
 UserSchema.methods.comparePassword = function (candidatePassword){
     let password = this.password;
@@ -60,6 +67,7 @@ UserSchema.methods.comparePassword = function (candidatePassword){
         });
     });
 };
+
 
 UserSchema.methods.gravatar = function (size) {
     if (!this.size) size = 200;

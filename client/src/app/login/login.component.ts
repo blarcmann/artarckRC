@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     try {
       if (this.validate()) {
         const data = await this.rest.post(
-          'http://localhost:2222/api/accounts/signup',
+          'http://localhost:2222/api/accounts/login',
           {
             email: this.email,
             password: this.password
@@ -49,6 +49,7 @@ export class LoginComponent implements OnInit {
         );
         if (data['success']) {
           localStorage.setItem('token', data['token']);
+          await this.data.getProfile();
           this.router.navigate(['/']);
           this.data.success('Login successful');
         } else {

@@ -26,5 +26,5 @@ app.use(cors());
 app.use('/api/accounts', userRoutes);
 
 app.listen(config.port, err => {
-    console.log('Shit happen on port ' + config.port);
+    console.log('Shit happens on port ' + config.port);
 })

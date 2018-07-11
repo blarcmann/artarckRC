@@ -2,7 +2,9 @@
   <div class="container p-5">
     <div class="row mt-5">
       <div class="col-lg-4 offset-lg-4">
-        <app-message></app-message>
+        <mat-card>
+          <app-message></app-message>
+        </mat-card>
         <mat-card>
           <mat-card-header>
             <mat-card-title>
@@ -12,14 +14,11 @@
           <mat-card-content>
             <form>
               <mat-form-field>
-                <input type="email" matInput placeholder="Your email" [(ngModel)]="email" name="email" email required #emailInput="ngModel">
-                <mat-error *ngIf="emailInput.hasError('required')">Field must not be empty.</mat-error>
+                <input type="email" matInput placeholder="Your email" [(ngModel)]="email" name="email">
               </mat-form-field>
               <br>
-              <mat-form-field hintLabel="Should be at least 6 characters long.">
-                <input type="password" matInput placeholder="Your password" [(ngModel)]="password" name="password" required minlength="6"
-                  #pwInput="ngModel">
-                <mat-error>Has to be at least 6 characters long.</mat-error>
+              <mat-form-field>
+                <input type="password" matInput placeholder="Your password" [(ngModel)]="password" name="password" required minlength="6">
               </mat-form-field>
               <br>
               <button type="button" class="center" mat-raised-button color="primary" (click)="login()" [disabled]="btnDisabled">Login</button>

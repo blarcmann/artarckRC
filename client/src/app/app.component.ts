@@ -15,7 +15,9 @@ export class AppComponent {
   constructor(
     private router: Router,
     private data: DataService
-  ) {}
+  ) {
+    this.data.getProfile();
+  }
 
   get token() {
     return localStorage.getItem('token');

@@ -53,14 +53,19 @@
     </button>
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <a fxLayout fxLayoutGap="10px" class="navigation-items">
-            <button mat-raised-button [matMenuTriggerFor]="menu">
+            <button *ngIf="!token" mat-raised-button [matMenuTriggerFor]="menu">
                 <mat-icon>keyboard_arrow_down</mat-icon>
-                <span *ngIf="!token">Account</span>
+                <span>Account</span>
+            </button>
+            <!-- display users name here as to account -->
+            <button *ngIf="data.user" mat-raised-button [matMenuTriggerFor]="menu">
+                <mat-icon>keyboard_arrow_down</mat-icon>
+                <span>{{data.user.name}}</span>
             </button>
             <mat-menu #menu="matMenu">
                 <button *ngIf="token" mat-menu-item routerLink="profile">
                     <mat-icon>person_pin</mat-icon>Profile</button>
-                <button *ngIf="token" mat-menu-item>
+                <button *ngIf="token" mat-menu-item (click)="logout()">
                     <mat-icon>power_settings_new</mat-icon>Logout</button>
                 <button *ngIf="!token" mat-menu-item routerLink="/register">
                     <mat-icon>person_add</mat-icon>Register</button>

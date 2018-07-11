@@ -1,4 +1,7 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../data.service';
+
 
 @Component({
   selector: 'app-sidenav',
@@ -10,6 +13,11 @@ export class SidenavComponent {
   isCollapsed = true;
   @Output() sidenavToggle = new EventEmitter<void>();
   @Output() closeSidenav = new EventEmitter<void>();
+
+  constructor(
+    private router: Router,
+    private data: DataService
+  ) { }
 
   onClose() {
     this.closeSidenav.emit();
@@ -32,7 +40,9 @@ export class SidenavComponent {
   }
 
   logout() {
-
+    this.data.user = {};
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 
   search() {

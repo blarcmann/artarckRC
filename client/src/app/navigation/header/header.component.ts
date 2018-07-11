@@ -1,4 +1,6 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { Router } from '@angular/router';
+import { DataService } from '../../data.service';
 
 @Component({
   selector: 'app-header',
@@ -9,6 +11,11 @@ export class HeaderComponent {
   searchTerm = '';
   isCollapsed = true;
   @Output() sidenavToggle = new EventEmitter<void>();
+
+  constructor(
+    private router: Router,
+    private data: DataService
+  ) { }
 
   onToggleSidenav() {
     this.sidenavToggle.emit();
@@ -27,7 +34,9 @@ export class HeaderComponent {
   }
 
   logout() {
-
+    this.data.user = {};
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 
   search() {

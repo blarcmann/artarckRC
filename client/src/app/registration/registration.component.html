@@ -2,7 +2,9 @@
   <div class="container p-5">
     <div class="row mt-5">
       <div class="col-lg-4 offset-lg-4">
-        <app-message></app-message>
+        <mat-card>
+          <app-message></app-message>
+        </mat-card>
         <mat-card>
           <mat-card-header>
             <mat-card-title>
@@ -12,8 +14,7 @@
           <mat-card-content>
             <form>
               <mat-form-field>
-                <input type="text" matInput placeholder="Your name" [(ngModel)]="name" name="name" required #nameInput="ngModel">
-                <mat-error *ngIf="nameInput.hasError('required')">Field must not be empty.</mat-error>
+                <input type="text" matInput placeholder="Your name" [(ngModel)]="name" name="name" required>
               </mat-form-field>
               <br>
               <mat-form-field>
@@ -23,20 +24,19 @@
               </mat-form-field>
               <br>
               <mat-form-field hintLabel="Should be at least 6 characters long.">
-                <input type="password" matInput placeholder="Your password" [(ngModel)]="password" name="password" required minlength="6"
-                  #pwInput="ngModel">
+                <input type="password" matInput placeholder="Your password" [(ngModel)]="password" name="password" required>
                 <mat-error>Has to be at least 6 characters long.</mat-error>
               </mat-form-field>
               <br>
               <mat-form-field hintLabel="Should be at least 6 characters long.">
-                <input type="password" matInput placeholder="Please, confirm your password" [(ngModel)]="password1" name="password1" required
-                  #pw1Input="ngModel">
+                <input type="password" matInput placeholder="Please, confirm your password" [(ngModel)]="password1" name="password1" required>
                 <mat-error>Has to match the password above.</mat-error>
               </mat-form-field>
               <br>
 
-              <mat-checkbox [(ngModel)]="isSeller" name="agree" required color="primary">Register as an exhibitor</mat-checkbox>
-              <br> <br>
+              <mat-checkbox [(ngModel)]="isSeller" name="agree" required color="accent">Register as an exhibitor</mat-checkbox>
+              <br>
+              <br>
               <button type="button" mat-raised-button color="primary" (click)="register()" [disabled]="btnDisabled">Register</button>
             </form>
           </mat-card-content>
