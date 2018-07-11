@@ -1,0 +1,54 @@
+<section id="address">
+  <div class="container p-5">
+
+    <h4 class="display-4">
+      My Shipping Address
+    </h4>
+    <hr>
+    <app-message></app-message>
+    <div *ngIf="!currentAddress" class="m-auto">
+      <div class="text-center display-3 mt-5">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+    <mat-card>
+      <mat-card-content>
+        <form>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Address 1" [(ngModel)]="currentAddress.addr1" name="address1">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Address 2" [(ngModel)]="currentAddress.addr2" name="address2">
+          </mat-form-field>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input type="text" matInput placeholder="City" [(ngModel)]="currentAddress.city" name="city">
+              </mat-form-field>
+              <br>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input type="text" matInput placeholder="State" [(ngModel)]="currentAddress.state" name="state">
+              </mat-form-field>
+              <br>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input type="text" matInput placeholder="Postal Code" [(ngModel)]="currentAddress.postalCode" name="postalCode">
+              </mat-form-field>
+              <br>
+            </div>
+          </div>
+          <mat-form-field>
+            <input type="text" matInput placeholder="Country" [(ngModel)]="currentAddress.country" name="country">
+          </mat-form-field>
+          <br>
+          <button type="button" mat-raised-button color="secondary" (click)="updateAddress()" [disabled]="btnDisabled">Update Address</button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</section>

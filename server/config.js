@@ -3,3 +3,7 @@ module.exports = {
     port: 2222,
     secret: 'sutesting123'
 }
+
+
+// accessKeyId => AKIAJWE5ZGDCLSH6QPEQ
+// secretAccessKey => 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

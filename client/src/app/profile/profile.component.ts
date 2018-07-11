@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-// import { MaterialModule } from '../material.module';
 import { DataService } from '../data.service';
 
 @Component({
@@ -9,7 +8,6 @@ import { DataService } from '../data.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
   constructor(private data: DataService) { }
 
   ngOnInit() {

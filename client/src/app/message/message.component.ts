@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { DataService } from '../data.service';
 
 @Component({
@@ -9,9 +10,8 @@ import { DataService } from '../data.service';
 })
 export class MessageComponent implements OnInit {
 
-  constructor( private data: DataService) { }
+  constructor(private data: DataService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
