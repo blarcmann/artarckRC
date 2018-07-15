@@ -1,0 +1,46 @@
+<section id="myProducts">
+  <div class="container p-5">
+    <app-message></app-message>
+    <div *ngIf="!products" class="ml-5 text-center m-auto">
+      <mat-spinner></mat-spinner>
+      <p>please wait...</p>
+    </div>
+  </div>
+  <div class="col-lg-7 offset-lg-1">
+    <h3 class="display-2 text-center mt-5" *ngIf="products && !products.length">I've not uploaded my works yet</h3>
+    <div class="row" *ngIf="products && products.length">
+      <div class="col">
+        <h4 class="display-4 text-center">My Products</h4>
+        <div class="row">
+          <div class="offset-10 col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">Price</small>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div *ngFor="let product of products" class="product">
+          <div class="row">
+            <div class="col-4 col-md-2">
+              <a routerLink="/product/{{ product.id }}">
+                <img src="{{product.image}}" alt="Product image" class="img-fluid img-thumbnail">
+              </a>
+            </div>
+            <div class="col-5 col-md-8">
+              <h5>
+                <a routerLink="/product/{{product.id}}" class="whiteName"> {{product.title}}</a>
+                <p class="m-0">
+                  <small class="text-muted">{{product.category.name}}</small>
+                </p>
+              </h5>
+            </div>
+            <div class="col-2">
+              <h6 class="font-weight-bold text-danger">{{ product.price | currency }}</h6>
+            </div>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

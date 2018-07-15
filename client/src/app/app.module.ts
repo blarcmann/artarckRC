@@ -24,6 +24,9 @@ import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { SettingsComponent } from './settings/settings.component';
 import { AddressComponent } from './address/address.component';
+import { CategoriesComponent } from './categories/categories.component';
+import { PostProductComponent } from './post-product/post-product.component';
+import { MyProductsComponent } from './my-products/my-products.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,10 @@ import { AddressComponent } from './address/address.component';
     LoginComponent,
     ProfileComponent,
     SettingsComponent,
-    AddressComponent
+    AddressComponent,
+    CategoriesComponent,
+    PostProductComponent,
+    MyProductsComponent
   ],
   imports: [
     BrowserModule,

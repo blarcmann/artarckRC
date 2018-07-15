@@ -51,6 +51,17 @@
     <button mat-icon-button>
         <mat-icon>search</mat-icon>
     </button>
+    <!-- hide this if the screen is extra small, which are 5'5 inches and below -->
+    <!-- <button fxHide.gt-md mat-raised-button class="ml-2" color="accent">
+        <a routerLink="/categories">
+            <b>Categories</b>
+        </a>
+    </button> -->
+    <!-- show this if the screen is extra small, which are 5'5 inches and below -->
+        <button routerLink="/categories" mat-icon-button>
+                <mat-icon>filter</mat-icon>
+        </button>
+
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
         <a fxLayout fxLayoutGap="10px" class="navigation-items">
             <button *ngIf="!token" mat-raised-button [matMenuTriggerFor]="menu">
@@ -66,8 +77,8 @@
                 <button *ngIf="token" mat-menu-item routerLink="profile">
                     <mat-icon>person_pin</mat-icon>Profile</button>
                 <button *ngIf="token" mat-menu-item (click)="logout()">
-                    <mat-icon>power_settings_new</mat-icon>Logout</button>
-                <button *ngIf="!token" mat-menu-item routerLink="/register">
+                    <mat-icon color="warn">power_settings_new</mat-icon>Logout</button>
+                <button color="primary" *ngIf="!token" mat-menu-item routerLink="/register">
                     <mat-icon>person_add</mat-icon>Register</button>
                 <button *ngIf="!token" mat-menu-item routerLink="/login">
                     <mat-icon>whatshot</mat-icon>Login</button>

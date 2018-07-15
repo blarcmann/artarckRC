@@ -1,0 +1,40 @@
+<section id="categories">
+  <div class="container p-5">
+    <app-message></app-message>
+    <h4 class="display-4">Categories</h4>
+    <hr>
+    <div *ngIf="!categories" class="m-auto">
+      <div class="text-center display-3 mt-5">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+    <div *ngIf="categories" class="list-group">
+      <button mat-raised-button routerLink="/categories/{{category._id}}" *ngFor="let category of categories">
+        {{category.name}}
+      </button>
+      <mat-divider></mat-divider>
+    </div>
+    <hr style="margin-top: 13rem;">
+    <div class="mt-5">
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>
+            <h3>Add a new Category</h3>
+          </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-content>
+          <mat-form-field>
+            <input type="text" name="newCategory" matInput placeholder="Add new Category" [(ngModel)]="newCategory">
+          </mat-form-field>
+
+          <br>
+          <button type="button" mat-raised-button color="accent" (click)="addCategory()" [disabled]="btnDisabled">Add Category</button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</section>
+
+<!-- class="list-group-item list-group-item-action" -->

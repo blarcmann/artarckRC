@@ -3,7 +3,7 @@
     <h4 class="display-4">My Profile</h4>
     <hr>
     <div *ngIf="!data.user" class="m-auto">
-      <div class="text-center display-3 mt-4">
+      <div class="content-center display-3 mt-4">
         <mat-spinner></mat-spinner>
       </div>
     </div>
@@ -15,13 +15,13 @@
 
       <div class="col-md-8 ml-3">
         <p class="lead" id="name"> {{ data.user.name }} </p>
-        <a routerLink="/profile/orders" class="btn btn-warning">My Orders</a>
+        <a mat-raised-button color="warn" routerLink="/profile/orders">My Orders</a>
         <br>
         <br>
-        <a routerLink="/profile/settings" class="btn btn-warning">Change Account Settings</a>
+        <a mat-raised-button color="warn" routerLink="/profile/settings">Change Account Settings</a>
         <br>
         <br>
-        <a routerLink="/profile/address" class="btn btn-warning">Change Shipping Address</a>
+        <a mat-raised-button color="warn" routerLink="/profile/address">Change Shipping Address</a>
         <br>
         <br>
         <div *ngIf="data.user.isSeller">
@@ -35,6 +35,7 @@
               <a routerLink="/profile/myproducts" class="btn btn-outline-success btn-block">My Products</a>
             </div>
           </div>
+          <hr>
         </div>
       </div>
     </div>
