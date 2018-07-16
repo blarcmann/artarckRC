@@ -4,4 +4,10 @@ mat-form-field {
 
 .bgCategory {
     background-color: darkgray;
+    width: 100%;
+    overflow: hidden;
+}
+
+.form-group select option {
+    width: 100%;
 }

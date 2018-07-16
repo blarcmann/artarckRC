@@ -5,8 +5,15 @@
 }
 
 ngb-carousel {
-   min-width: 1000px;
-   max-width: 1500%;
+   min-width: 800px;
+   max-width: 1500px;
    margin-left: auto;
    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+.card-text {
+    font-size: 130%;
 }
