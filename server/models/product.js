@@ -1,9 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Category = require('./category');
-const User = require('./user');
-const Review = require('./review');
 const deepPopulate = require('mongoose-deep-populate')(mongoose);
+const mongooseAlgolia = require('mongoose-algolia');
 
 const ProductSchema = new Schema({
     category: {
@@ -44,6 +42,43 @@ ProductSchema
     });
 
 ProductSchema.plugin(deepPopulate);
+ProductSchema.plugin(mongooseAlgolia, {
+    appId: 'RH2OQ34WSP',
+    apiKey: '249f5d83212291330f862a28f75d2bfb',
+    indexName: 'artarckRC',
+    selector: '_id title image reviews description price owner created averageRating',
+    populate: {
+        path: 'owner reviews',
+        select: 'name rating'
+    },
+    defaults: {
+        author: 'unknown'
+    },
+    mappings: {
+        title: function(value) {
+            return `${value}`
+        }
+    },
+    virtuals: {
+        averageRating: function(doc) {
+            var rating = 0;
+            if (doc.reviews.length == 0) {
+                rating = 0;
+            } else {
+                doc.reviews.map((review) => {
+                    rating += review.rating;
+                });
+                rating = rating / doc.reviews.length
+            }
+            return rating;
+        }
+    },
+    debug: true
+})
+let Model = mongoose.model('Product', ProductSchema);
+Model.SyncToAlgolia();
+Model.SetAlgoliaSettings({
+    searchableAttributes: ['title']
+});
 
-
-module.exports = mongoose.model('Product', ProductSchema);
+module.exports = Model;

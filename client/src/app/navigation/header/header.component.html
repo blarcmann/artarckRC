@@ -1,39 +1,3 @@
-<!-- <mat-toolbar color="primary">
-    <div fxHide.gt-xs>
-        <button mat-icon-button (click)="onToggleSidenav()">
-            <mat-icon>menu</mat-icon>
-        </button>
-    </div>
-
-    <div fxLayout fxLayoutAlign="space-around center">
-        <img id="logo" src="./assets/images/logo.png" alt="artarckClone logo">
-    </div>
-
-    <div fxFlex fxLayout fxLayoutAlign="flex-end center" fxHide.xs>
-        <button mat-raised-button [matMenuTriggerFor]="menu">
-            <mat-icon>favorite</mat-icon>
-            <span>Account</span>
-        </button>
-        <mat-menu #menu="matMenu">
-            <button mat-menu-item>Profile</button>
-            <button mat-menu-item>Logout</button>
-            <button mat-menu-item>Register</button>
-            <button mat-menu-item>Login</button>
-        </mat-menu>
-        <button mat-icon-button>
-            <mat-icon aria-label="">shop</mat-icon>
-        </button>
-    </div>
-</mat-toolbar>
-<div fxLayoutAlign="center center" class="contain">
-    <mat-form-field fxFlex="80%">
-        <input matInput type="search" [(ngModel)]="searchTerm" (keyup.enter)="search()" placeholder="wetin you lost??">
-    </mat-form-field>
-    <button mat-icon-button>
-        <mat-icon aria-label="">search</mat-icon>
-    </button>
-</div> -->
-
 <mat-toolbar color="primary">
     <div fxHide.gt-xs>
         <button mat-icon-button (click)="onToggleSidenav()">
@@ -41,11 +5,11 @@
         </button>
     </div>
     <div fxHide.xs class="logoContainer">
-        <img id="logo" routerLink="/" src="./assets/images/logo.png" alt="artarckClone logo">
+        <img id="logo" routerLink="" src="./assets/images/logo.png" alt="artarckRC logo">
     </div>
     <div fxFlex fxLayout fxLayoutAlign="flex">
         <mat-form-field>
-            <input matInput type="search" [(ngModel)]="searchTerm" (keyup.enter)="search()" placeholder="Search">
+            <input matInput type="search" [(ngModel)]="searchTerm" (keyup.enter)="search()" placeholder="Press enter to search">
         </mat-form-field>
     </div>
     <button mat-icon-button>
@@ -76,15 +40,18 @@
             <mat-menu #menu="matMenu">
                 <button *ngIf="token" mat-menu-item routerLink="profile">
                     <mat-icon>person_pin</mat-icon>Profile</button>
+                    
                 <button *ngIf="token" mat-menu-item (click)="logout()">
                     <mat-icon color="warn">power_settings_new</mat-icon>Logout</button>
-                <button color="primary" *ngIf="!token" mat-menu-item routerLink="/register">
+
+                <button color="primary" *ngIf="!token" mat-menu-item routerLink="register">
                     <mat-icon>person_add</mat-icon>Register</button>
-                <button *ngIf="!token" mat-menu-item routerLink="/login">
+
+                <button *ngIf="!token" mat-menu-item routerLink="login">
                     <mat-icon>whatshot</mat-icon>Login</button>
             </mat-menu>
             <button mat-icon-button>
-                <mat-icon aria-label="">shopping_cart</mat-icon>
+                <mat-icon>shopping_cart</mat-icon>
             </button>
         </a>
     </div>

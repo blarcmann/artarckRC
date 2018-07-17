@@ -14,9 +14,12 @@ import { PostProductComponent } from './post-product/post-product.component';
 import { MyProductsComponent } from './my-products/my-products.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
+import { SearchComponent } from './search/search.component';
+
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'search', component: SearchComponent },
   {path: 'categories', component: CategoriesComponent},
   {path: 'categories/:id', component: CategoryComponent},
   {path: 'product/:id', component: ProductComponent},

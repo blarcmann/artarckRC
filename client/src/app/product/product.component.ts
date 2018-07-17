@@ -46,11 +46,11 @@ export class ProductComponent implements OnInit {
         title: this.myReview.title,
         description: this.myReview.description,
         rating: this.myReview.rating
-      }
-      );
+      });
       data['success']
         ? this.data.success(data['message'])
         : this.data.error(data['message']);
+        console.log(this.myReview);
     } catch (error) {
       this.data.error(error['message']);
     }

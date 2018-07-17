@@ -40,6 +40,9 @@ export class HeaderComponent {
   }
 
   search() {
-
+    if (this.searchTerm) {
+      this.collapse();
+      this.router.navigate(['search', { query: this.searchTerm }]);
+    }
   }
 }

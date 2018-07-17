@@ -152,8 +152,8 @@ router.post('/review', checkJWT, (req, res, next) => {
             review.owner = req.decoded.user._id;
 
             if (req.body.title) review.title = req.body.title;
-            if (req.body.description) review.decription = req.body.description
-            review.rating = req.body.rating;
+            if (req.body.description) review.description = req.body.description;
+            if (req.body.rating) review.rating = req.body.rating;
 
 
             product.reviews.push(review._id);

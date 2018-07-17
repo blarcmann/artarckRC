@@ -9,6 +9,7 @@ const app = express();
 const userRoutes = require('./routes/account');
 const mainRoutes = require('./routes/main');
 const sellerRoutes = require('./routes/seller');
+const productSearchRoutes = require('./routes/product-search');
 
 mongoose.connect(config.database, err => {
     if(err) {
@@ -28,6 +29,7 @@ app.use(cors());
 app.use('/api', mainRoutes);
 app.use('/api/accounts', userRoutes);
 app.use('/api/seller', sellerRoutes);
+app.use('/api/search', productSearchRoutes);
 
 app.listen(config.port, err => {
     console.log('Shit happens on port ' + config.port);
