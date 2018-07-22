@@ -1,5 +1,5 @@
 section {
-    height: 1000px;
+    height: 100%;
 }
 mat-form-field {
     width: 100%;
@@ -8,3 +8,13 @@ mat-form-field {
 .toneColor {
     color: gainsboro;
 }
+#extendSize {
+    width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+/* a:hover {
+    color: aquamarine;
+} */

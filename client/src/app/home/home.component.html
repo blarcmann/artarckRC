@@ -1,57 +1,153 @@
 <section id="home">
-  <div class="container-fluid d-none d-md-block">
-    <ngb-carousel>
-      <ng-template ngbSlide>
-        <img src="assets/images/banner0.jpg" alt="bannerA" class="item">
-      </ng-template>
-      <!-- <ng-template ngbSlide>
-        <img src="assets/images/banner1.jpg" alt="bannerB" class="item" >
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/images/banner2.jpg" alt="bannerC" class="item" >
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/images/banner3.jpg" alt="bannerD" class="item" >
-      </ng-template>
-      <ng-template ngbSlide>
-        <img src="assets/images/banner5.jpg" alt="bannerE" class="item" >
-      </ng-template> -->
-      <ng-template ngbSlide>
-        <img src="assets/images/banner7.jpg" alt="bannerF" class="item">
-      </ng-template>
-    </ngb-carousel>
+  <div class="container-fluid banner-wrap banner">
+    <h5 class="text-center blurBanner">
+      <img src="./assets/images/logo.png" class="center-img" alt="welcome image">
+    </h5>
+    <h3 class="text-center whitish">The CreativesHome</h3>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <!--<h5 class="text-center"><img src="./assets/images/top_items.png" class="banner-img img-responsive" alt="banner-img"></h5> -->
   </div>
-  <div class="container p-5">
+
+  <div class="container pt-5">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-5 intro-text">
+        <h1 class="text-center">
+          <i class="fa fa-2x fa-spinner"></i>
+        </h1>
+        <h3 class="text-center mt-3 top-text">Buy and Sell Easily</h3>
+        <p class="text-center bottom-text">I might pull up to her block, 7:30 And fuck her once, She mad I keep pullin' on her tracks Bought her Uber here but
+          I didn't buy it back Fuck a 'lac, all of this is facts She just wanna throw that ass back when I...</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-5 intro-text">
+        <h1 class="text-center">
+          <i class="fa fa-2x fa-angellist"></i>
+        </h1>
+        <h3 class="text-center mt-3 top-text">Secure Transaction</h3>
+        <p class="text-center bottom-text">Wait, in the trap with the top and the cash, ayy I won't tolerate a bitch talkin' back, ayy 'Less she lookin' at
+          me, throwin' that shit back, ayy 20 motherfuckin' racks on her birthday...</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-5 intro-text">
+        <h1 class="text-center">
+          <i class="fa fa-2x fa-trademark"></i>
+        </h1>
+        <h3 class="text-center mt-3 top-text">Product Control</h3>
+        <p class="text-center bottom-text">Jumped in the 'What the fuck is that' Drunk and it ain't no comin' back Pussy nigga don't get hit up with the .30
+          Sendin' bullets lookin' all across the map, ayy T.O. niggas don't know how to act</p>
+      </div>
+
+      <div class="col-lg-3 col-md-6 col-sm-6 mb-5 intro-text">
+        <h1 class="text-center">
+          <i class="fa fa-2x fa-500px"></i>
+        </h1>
+        <h3 class="text-center mt-3 top-text">Quality Platform</h3>
+        <p class="text-center bottom-text">Wait, cracked that Hennessy and now I'm drunk, ayy We don't know you, you can't smoke the blunt, ayy Yeah, I see
+          the opps in the front but I got a Glock in my Louis V draws Jumped in the...</p>
+      </div>
+    </div>
+  </div>
+  <!-- magnet -->
+  <div class="container-fluid">
+    <div class="row">
+      <!-- left -->
+      <div class="sub-banner-left col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h3 class="text-center pt-4">
+          <i class="fa fa-3x fa-american-sign-language-interpreting"></i>
+        </h3>
+        <h6 class="text-center">MAKE MONEY ASAP</h6>
+        <h1 class="text-center">START SELLING</h1>
+        <br>
+        <h4 class="text-center">
+          <button type="button" routerLink="/login" class="mb-5"mat-raised-button color="primary">Open PawnShop</button>
+        </h4>
+      </div>
+      <!-- right -->
+      <div class="sub-banner-right col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <h3 class="text-center pt-4">
+          <i class="fa fa-3x fa-magnet colorX"></i>
+        </h3>
+        <h6 class="text-center">FIND ANYTHING YOU WANT</h6>
+        <h1 class="text-center">START <span class="colorX">BUYING</span></h1>
+        <br>
+        <h4 class="text-center">
+          <button type="button" routerLink="/register" mat-raised-button class="colorXbg mb-5">Register Now!</button>
+        </h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid pt-4 pl-5 pr-5 mt-5">
+    <div class="row">
+      <div class="headliner primary mb-3 pt-2 pl-2">
+         <h4>Recommended deals</h4>
+      </div>
+    </div>
+  </div>
+  <div class="container">
     <app-message></app-message>
-    <p class="lead">
-      <b>Recommended deals</b>
-    </p>
     <div class="row">
       <div *ngIf="!products" class="m-auto">
         <h1 class="text-center display-3 mt-5">
           <mat-spinner></mat-spinner>
         </h1>
       </div>
-      <div *ngFor="let product of products" class="col-md-3 mb-5">
-        <a routerLink="/product/{{ product._id }}">
-          <mat-card>
+      <div *ngFor="let product of products" class="col-lg-3 col-md-4 col-sm-6 mb-5">
+        <mat-card>
+          <a routerLink="/product/{{ product._id }}">
             <mat-card-header>
               <mat-card-title>
-                {{ product.title }}
+                <h5>{{ product.title }}</h5>
               </mat-card-title>
-              <mat-card-subtitle><p class="card-text">{{ product.price | currency }}</p></mat-card-subtitle>
+              <mat-card-subtitle>
+                <span class="card-text">{{ product.price | currency }}</span>
+              </mat-card-subtitle>
             </mat-card-header>
-            <mat-divider></mat-divider>
             <br>
             <mat-card-content>
               <img src="{{ product.image }}" alt="{{product.title }} image" mat-card-image class="image-fill">
             </mat-card-content>
-            <mat-card-actions>
-              <mat-icon>thumb_up_alt</mat-icon>
-            </mat-card-actions>
-          </mat-card>
-        </a>
+          </a>
+          <mat-card-actions (click)="addToCart()">
+            <ngb-rating [(rate)]="product.averageRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+          </mat-card-actions>
+        </mat-card>
       </div>
     </div>
   </div>
 </section>
+
+<ng-template #t let-fill="fill">
+  <span *ngIf="fill === 100" class="star full">&#9733;</span>
+  <span *ngIf="fill === 0" class="star">&#9733;</span>
+  <span *ngIf="fill < 100 && fill > 0" class="star">
+    <span class="half" [style.width.%]="fill">&#9733;</span>
+    &#9733;
+  </span>
+</ng-template>
+
+<!-- <ngb-carousel>
+    <ng-template ngbSlide>
+      <img src="assets/images/banner0.jpg" alt="bannerA" class="item">
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/images/banner1.jpg" alt="bannerB" class="item" >
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/images/banner2.jpg" alt="bannerC" class="item" >
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/images/banner3.jpg" alt="bannerD" class="item" >
+    </ng-template>
+    <ng-template ngbSlide>
+      <img src="assets/images/banner5.jpg" alt="bannerE" class="item" >
+    </ng-template> 
+    <ng-template ngbSlide>
+      <img src="assets/images/banner7.jpg" alt="bannerF" class="item">
+    </ng-template>
+  </ngb-carousel> -->

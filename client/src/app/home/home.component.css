@@ -11,9 +11,109 @@ ngb-carousel {
    margin-right: auto;
 }
 
+
 a {
     text-decoration: none;
 }
+
+h1, h3 {
+    font-family: "Titillium Web", sans-serif;
+}
+
+h1 {
+    font-size: 3em;
+    text-align: center;
+    font-weight: 700;
+}
+.whitish {
+    color: #fff;
+}
+
 .card-text {
     font-size: 130%;
+}
+
+.banner-wrap {
+    background: url("../../assets/images/home_banner.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.center-img {
+    padding-top: 4%;
+    width: 35%
+}
+
+@media screen and (max-width: 460px) {
+    h1 {
+      font-size: 1em; 
+    }
+    .center-img{
+        padding-top: 15%;
+        width: 50%;
+    }
+    .banner-img {
+        width: 100%;
+    }
+}
+
+.top-text {
+    margin: 0 5%;
+    align-content: center;
+    align-items: center;
+}
+
+.bottom-text {
+    font-size: 80%;
+    letter-spacing: 90%;
+    word-spacing: 80%;
+    width: 100%;
+}
+
+.sub-banner-right {
+    background: #242e30 url("../../assets/images/promo1_texture.png");
+    color: #fff;
+}
+
+.sub-banner-left {
+    background: #1cbdf9 url("../../assets/images/promo2_texture.png"); 
+    color: #fff;
+}
+.colorX {
+    color: cyan;
+}
+
+.colorXbg {
+    background-color: darkcyan;
+    color: #fff;
+}
+.headliner {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ebebeb;
+    border-left: none;
+    height: 66px;
+    padding-left: 22px;
+    position: relative;
+}
+
+.headliner:before {
+    display: block;
+    content: '';
+    width: 8px;
+    height: 66px;
+    background-color: #535d5f;
+    position: absolute;
+    top: -1px;
+    left: 0;
+}
+
+.headliner.primary:before, .headline.primary {
+    background-color: #00d7b3; 
+}
+
+.headliner h4 {
+    padding-top: 12px;
+    padding-left: 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 120%;
 }

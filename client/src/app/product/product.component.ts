@@ -58,6 +58,10 @@ export class ProductComponent implements OnInit {
 
   }
 
-
+addToCart() {
+  this.data.addToCart(this.product)
+    ? this.data.success('Product successfully added to your cart')
+    : this.data.error(':( my bad...Product has already been in the cart');
+}
 
 }

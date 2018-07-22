@@ -15,7 +15,7 @@ export class HeaderComponent {
   constructor(
     private router: Router,
     private data: DataService
-  ) { }
+  ) { this.data.cartItems = this.data.getCart().length; }
 
   onToggleSidenav() {
     this.sidenavToggle.emit();
@@ -35,6 +35,7 @@ export class HeaderComponent {
 
   logout() {
     this.data.user = {};
+    this.data.cartItems = 0;
     localStorage.clear();
     this.router.navigate(['']);
   }

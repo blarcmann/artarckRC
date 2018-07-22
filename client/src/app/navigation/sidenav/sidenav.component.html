@@ -1,5 +1,5 @@
 <mat-nav-list>
-    <img src="./assets/images/logo.png" alt="logoArtarck" id="logo" class=" ml-5 mb-5">
+    <img src="./assets/images/logoblack.png" alt="logoArtarck" id="logo" routerLink="/" class="ml-5 mb-5">
 
     <!-- <div *ngIf="!data.user" class="m-auto">
         <div class="content-center display-3 mt-4">
@@ -14,13 +14,7 @@
         </p>
     </div>
 
-    <mat-list-item *ngIf="token">
-        <button mat-raised-button class="xtendBtn">
-            <span class="mr-3">My cart</span>
-            <mat-icon matBadge="17">shopping_cart</mat-icon>
-        </button>
-    </mat-list-item>
-    <div class="mt-5">
+    <div class="mt-4">
         <hr>
     </div>
     <a mat-list-item routerLink="/login" (click)="onClose()" *ngIf="!token" class="mt-5">
@@ -33,11 +27,15 @@
     </a>
     <a mat-list-item routerLink="/profile" (click)="onClose()" *ngIf="token">
         <mat-icon>person_pin</mat-icon>
-        <span matBadge="2" class="nav-caption ml-3" matBadgeOverlap="false">Profile</span>
+        <span class="nav-caption ml-3">Profile</span>
     </a>
     <a mat-list-item routerLink="/logout" (click)="logout()" *ngIf="token">
         <mat-icon color="warn">power_settings_new</mat-icon>
         <span class="nav-caption ml-3" color="warn">Logout</span>
+    </a>
+    <a mat-list-item routerLink="/categories">
+        <mat-icon color="primary">more_vert</mat-icon>
+        <span class="nav-caption ml-3" color="warn">Categories</span>
     </a>
     <div class="mt-2">
         <hr>

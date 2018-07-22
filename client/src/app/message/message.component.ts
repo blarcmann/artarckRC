@@ -5,8 +5,7 @@ import { DataService } from '../data.service';
 @Component({
   selector: 'app-message',
   templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css'],
-  providers: [DataService]
+  styleUrls: ['./message.component.css']
 })
 export class MessageComponent implements OnInit {
 

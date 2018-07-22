@@ -17,7 +17,7 @@ export class SidenavComponent {
   constructor(
     private router: Router,
     private data: DataService
-  ) { }
+  ) { this.data.cartItems = this.data.getCart().length; }
 
   onClose() {
     this.closeSidenav.emit();
@@ -41,6 +41,7 @@ export class SidenavComponent {
 
   logout() {
     this.data.user = {};
+    this.data.cartItems = 0;
     localStorage.clear();
     this.router.navigate(['']);
   }

@@ -15,12 +15,14 @@ import { MyProductsComponent } from './my-products/my-products.component';
 import { CategoryComponent } from './category/category.component';
 import { ProductComponent } from './product/product.component';
 import { SearchComponent } from './search/search.component';
+import { CartComponent } from './cart/cart.component';
 
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent },
   {path: 'categories', component: CategoriesComponent},
+  {path: 'cart', component: CartComponent},
   {path: 'categories/:id', component: CategoryComponent},
   {path: 'product/:id', component: ProductComponent},
   {path: 'register', component: RegistrationComponent, canActivate: [AuthGuardService] },

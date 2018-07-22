@@ -22,8 +22,9 @@
         </a>
     </button> -->
     <!-- show this if the screen is extra small, which are 5'5 inches and below -->
-        <button routerLink="/categories" mat-icon-button>
+        <button fxHide.xs routerLink="/categories" mat-icon-button>
                 <mat-icon>more_vert</mat-icon>
+                <span>Categories</span>
         </button>
 
     <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
@@ -50,9 +51,10 @@
                 <button *ngIf="!token" mat-menu-item routerLink="login">
                     <mat-icon>whatshot</mat-icon>Login</button>
             </mat-menu>
-            <button mat-icon-button>
-                <mat-icon>shopping_cart</mat-icon>
-            </button>
         </a>
     </div>
+    <button mat-icon-button>
+        <mat-icon *ngIf="!data.cartItems">remove_shopping_cart</mat-icon>
+        <mat-icon *ngIf="data.cartItems" routerLink="/cart" routerLinkActive="true" matBadge="{{data.cartItems}}" matBadgeColor="accent">shopping_cart</mat-icon>
+    </button>
 </mat-toolbar>

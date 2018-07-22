@@ -1,9 +1,12 @@
 const router = require('express').Router();
 const async = require('async');
+const stripe = require('stripe')('sk_test_9LOBWYBd2gKwUVhQgFIbOoG4');
+
 const Category = require('../models/category');
 const Product = require('../models/product');
 const Review = require('../models/review');
 const checkJWT = require('../middlewares/check-jwt');
+const Order = require('../models/order');
 
 router.route('/categories')
     .get((req, res, next) => {
@@ -31,7 +34,7 @@ router.route('/categories')
 
 
 router.get('/products', (req, res, next) => {
-    const perPage = 10;
+    const perPage = 12;
     const page = req.query.page;
     async.parallel([
         function (callback) {
@@ -93,7 +96,7 @@ router.get('/product/:id', (req, res, next) => {
 
 
 router.get('/categories/:id', (req, res, next) => {
-    const perPage = 10;
+    const perPage = 12;
     const page = req.query.page;
     async.parallel([
         function (callback) {
@@ -167,6 +170,44 @@ router.post('/review', checkJWT, (req, res, next) => {
     ]);
 });
 
+
+
+router.post('/payment', checkJWT, (req, res, next) => {
+    const stripeToken = req.body.stripeToken;
+    const currentCharges = Math.round(req.body.totalPrice * 100);
+
+    stripe.customers
+        .create({
+            source: stripeToken.id
+        })
+        .then(function (customer) {
+            return stripe.charges.create({
+                amount: currentCharges,
+                currency: 'usd',
+                customer: customer.id
+            });
+        })
+        .then(function (charge) {
+            const products = req.body.products;
+
+            let order = new Order();
+            order.owner = req.decoded.user._id,
+                order.totalPrice = currentCharges;
+
+            products.map(product => {
+                order.product.push({
+                    product: product.product,
+                    quantity: product.quantity
+                });
+            });
+
+            order.save();
+            res.json({
+                success: true,
+                message: 'Payment successfully made'
+            });
+        });
+});
 
 
 module.exports = router;

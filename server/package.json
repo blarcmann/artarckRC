@@ -1,16 +1,17 @@
 {
   "name": "server",
   "version": "1.0.0",
-  "description": "artarck clone 1",
+  "description": "artarck RC",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
     "marketplace",
-    "graphics",
+    "art",
     "humanity",
-    "expression"
+    "expression",
+    "artarck"
   ],
   "author": "yemiOdetola",
   "license": "ISC",
@@ -29,6 +30,7 @@
     "mongoose-deep-populate": "^3.1.1",
     "morgan": "^1.9.0",
     "multer": "^1.3.1",
-    "multer-s3": "^2.7.0"
+    "multer-s3": "^2.7.0",
+    "stripe": "^6.2.1"
   }
 }

@@ -1,0 +1,68 @@
+<section id="cart">
+  <div class="container-fluid p-5">
+    <app-message></app-message>
+    <h3 class="text-center display-2 mt-5" *ngIf="!cartItems.length">Cart is empty</h3>
+    <div *ngIf="cartItems.length" class="row">
+      <div class="col-md-9">
+        <p class="lead font-weight-bold"> Shopping Cart</p>
+        <div class="row">
+          <div class="offset-8 col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">Price</small>
+            </p>
+          </div>
+          <div class="col-2 d-none d-md-block">
+            <p>
+              <small class="text-muted">Quantity</small>
+            </p>
+          </div>
+        </div>
+        <hr class="mt-0">
+        <div *ngFor="let item of cartItems; let i=index, trackBy: trackByCartItems" class="cartItem">
+          <div class="row">
+            <div class="col-4 col-md-2">
+              <a routerLink="/product/{{ item._id }}">
+                <img src="{{ item.image }}" alt="{{ item.owner.name }} image" class="img-fluid roundedImg img-thumbnail">
+              </a>
+            </div>
+            <div class="col-5 col-md-6">
+              <h5>
+                <a class="product-title" routerLink="/product/{{ item._id }}">{{ item.title }}</a>
+              </h5>
+              <p class="m-0">
+                <small class="text-muted">{{ item.owner.name }}</small>
+              </p>
+              <p class="m-0">
+                <small class="text-muted">{{ item.category.name }}</small>
+              </p>
+              <a (click)="removeProduct(i, item)" class="danger delBtn">Delete</a>
+            </div>
+            <div class="col-1 col-md-2">
+              <h6 class="font-weight-bold text-danger">{{ item.price | currency }}</h6>
+            </div>
+            <div class="col-1 mt-5 mt-md-0 p-0">
+              <mat-form-field>
+                <input type="number" min="1" max="99" matInput [(ngModel)]="quantities[i]" name="quantity">
+              </mat-form-field>
+            </div>
+          </div>
+          <hr>
+        </div>
+        <h5 class="text-right">
+          <span class="ml-1 font-weight-bold text-danger">{{ cartTotal | currency }}</span>
+        </h5>
+      </div>
+      <div class="col-md-3">
+        <mat-card>
+          <mat-card-content>
+            <h5>total:
+              <span class="ml-1 font-weight-bold text-danger">{{ cartTotal | currency }}</span>
+            </h5>
+            <br>
+            <button class="btn btn-warning btn-block" (Click)="checkout()" [disabled]="btnDisabled">Checkout</button>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</section>

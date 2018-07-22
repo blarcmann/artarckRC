@@ -38,6 +38,9 @@
                 <h3>Price: {{ product.price | currency }}</h3>
               </mat-card-title>
             </mat-card-header>
+            <mat-card-content>
+              <a mat-raised-button id="extendSize" (click)="addToCart()" color="accent">Add to cart</a>
+            </mat-card-content>
           </mat-card>
         </div>
       </div>
