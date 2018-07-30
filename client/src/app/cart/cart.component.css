@@ -15,3 +15,7 @@ input::-webkit-inner-spin-button {
 mat-form-field {
     width: 100%;
 }
+
+section {
+    min-height: 495px;
+}

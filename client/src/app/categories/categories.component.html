@@ -9,12 +9,12 @@
       </div>
     </div>
     <div *ngIf="categories" class="list-group">
-      <button mat-raised-button routerLink="/categories/{{category._id}}" *ngFor="let category of categories">
-        {{category.name}}
+      <button mat-raised-button routerLink="/categories/{{category._id}}" class="pt-1 pb-1 mt-1" *ngFor="let category of categories">
+        {{category.name | uppercase}}
       </button>
       <mat-divider></mat-divider>
     </div>
-    <hr style="margin-top: 13rem;">
+    <hr style="margin-top: 8rem;">
     <div class="mt-5">
       <mat-card>
         <mat-card-header>
@@ -36,5 +36,6 @@
     </div>
   </div>
 </section>
+<app-footer></app-footer>
 
 <!-- class="list-group-item list-group-item-action" -->

@@ -5,3 +5,7 @@
 a {
     text-decoration: none;
 }
+
+section {
+    min-height: 100%;
+}

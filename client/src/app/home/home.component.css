@@ -88,10 +88,9 @@ h1 {
 }
 .headliner {
     width: 100%;
-    background-color: #fff;
-    border: 1px solid #ebebeb;
+    border: 0.5px solid #ebebeb;
     border-left: none;
-    height: 66px;
+    height: 60px;
     padding-left: 22px;
     position: relative;
 }
@@ -99,8 +98,8 @@ h1 {
 .headliner:before {
     display: block;
     content: '';
-    width: 8px;
-    height: 66px;
+    width: 5px;
+    height: 60px;
     background-color: #535d5f;
     position: absolute;
     top: -1px;
@@ -115,5 +114,80 @@ h1 {
     padding-top: 12px;
     padding-left: 10px;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 120%;
+}
+
+/* .section-title-special {
+    text-align: center;
+    font-size: 17px;
+    line-height: 23px;
+    margin: 0 0 40px;
+} */
+
+.how-heading {
+    font-size: 38px;
+    color: gold;
+    margin-left: 50%;
+}
+
+.steps-head{
+    color: #c95effe0;
+}
+
+.process-item {
+    margin-bottom: 30px;
+    margin-top: 20px;
+}
+
+.process-item .content {
+    margin-left: 100px;
+    line-height: 1.7;
+    font-size: 13px
+}
+
+.process-item .steps {
+    width: 70px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    font-size: 56px;
+    position: relative;
+}
+
+/* .process-item .steps span .text-primary {
+    color: gold;
+} */
+
+.process-item .steps:after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    bottom: 4px;
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background: #FFBF00;
+}
+
+.process-item .content {
+    margin-left: 100px;
+    line-height: 1.7;
+    font-size: 13px
+}
+
+.process-item .content h3,
+.process-item .content h4 {
+    line-height: 1.2;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .process-item .content h3 {
+        font-size: 18px;
+    }
+    .how-heading {
+        margin-left: 25%;
+    }
 }

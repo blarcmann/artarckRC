@@ -64,7 +64,7 @@
         <h1 class="text-center">START SELLING</h1>
         <br>
         <h4 class="text-center">
-          <button type="button" routerLink="/login" class="mb-5"mat-raised-button color="primary">Open PawnShop</button>
+          <button type="button" routerLink="/login" class="mb-5" mat-raised-button color="primary">Open PawnShop</button>
         </h4>
       </div>
       <!-- right -->
@@ -73,7 +73,9 @@
           <i class="fa fa-3x fa-magnet colorX"></i>
         </h3>
         <h6 class="text-center">FIND ANYTHING YOU WANT</h6>
-        <h1 class="text-center">START <span class="colorX">BUYING</span></h1>
+        <h1 class="text-center">START
+          <span class="colorX">BUYING</span>
+        </h1>
         <br>
         <h4 class="text-center">
           <button type="button" routerLink="/register" mat-raised-button class="colorXbg mb-5">Register Now!</button>
@@ -85,7 +87,7 @@
   <div class="container-fluid pt-4 pl-5 pr-5 mt-5">
     <div class="row">
       <div class="headliner primary mb-3 pt-2 pl-2">
-         <h4>Recommended deals</h4>
+        <h5>Recommended deals</h5>
       </div>
     </div>
   </div>
@@ -102,7 +104,7 @@
           <a routerLink="/product/{{ product._id }}">
             <mat-card-header>
               <mat-card-title>
-                <h5>{{ product.title }}</h5>
+                <h6>{{ product.title }}</h6>
               </mat-card-title>
               <mat-card-subtitle>
                 <span class="card-text">{{ product.price | currency }}</span>
@@ -120,7 +122,54 @@
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="col-md-10 col-md-offset-1">
+      <div class="row">
+        <h3 class="how-heading">How it works</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="process-item">
+          <div class="steps">
+            <span class="text-primary"></span>01
+          </div>
+          <div class="content">
+            <h3 class="steps-head">Sign Up</h3>
+            <p>Manual Review Some vulnerabilities require your attention to resolve</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="process-item">
+          <div class="steps">
+            <span class="text-primary"></span>02
+          </div>
+          <div class="content">
+            <h3 class="steps-head">Search Arts</h3>
+            <p>Manual Review Some vulnerabilities require your attention to resolve</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="process-item">
+          <div class="steps">
+            <span class="text-primary"></span>03
+          </div>
+          <div class="content">
+              <h3 class="steps-head">Get Yours</h3>
+              <p>Manual Review Some vulnerabilities require your attention to resolve</p>
+            </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </section>
+<app-footer></app-footer>
 
 <ng-template #t let-fill="fill">
   <span *ngIf="fill === 100" class="star full">&#9733;</span>

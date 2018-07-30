@@ -1,7 +1,101 @@
-#logo {
-    width: 80px;
+.secondary-footer {
+    background: #292929;
+    color: rgba(255, 255, 255, 0.5);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 13px;
 }
 
-.left-space {
-    padding-right: 10px;
+ul.secondary-footer-menu {
+    margin: 0;
+}
+
+ul.secondary-footer-menu li {
+    float: right;
+    list-style: none;
+}
+
+ul.secondary-footer-menu li:not(:first-child):after {
+    content: "|";
+    margin: 0 15px;
+    list-style: none;
+}
+
+ul.secondary-footer-menu li a {
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 400;
+    font-size: 13px;
+    list-style: none;
+}
+
+ul.secondary-footer-menu li a:hover {
+    color: #FFF;
+}
+
+.footer-maker a {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-maker a:hover {
+    color: gold;
+}
+.footer-maker h6 {
+    font-size: 95%;
+}
+
+.footer-logo {
+    color: goldenrod;
+    padding-top: 5px;
+}
+
+.footer-logo:hover {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+
+@media only screen and (max-width: 1199px) {}
+@media only screen and (max-width: 991px) {}
+@media only screen and (max-width: 767px) {
+    ul.menu-footer li {
+        width: 50%;
+        float: left;
+    }
+		ul.menu-footer li a {
+				font-size: 13px;
+		}
+		ul.footer-faq li a {
+				font-size: 12px;
+		}
+    .footer-wrapper .footer-newsletter h4 {
+        text-align: left;
+    }
+    .footer-wrapper .secondary-footer,
+    .footer-wrapper-09 ul.secondary-footer-menu {
+        text-align: center;
+    }
+    .footer-wrapper ul.secondary-footer-menu li {
+        float: none;
+        display: inline-block;
+    }
+    .footer-wrapper ul.secondary-footer-menu li:after {
+        content: "|";
+        margin: 0 15px;
+    }
+    .footer-wrapper ul.secondary-footer-menu li:Last-child::after {
+        display: none;
+    }
+    .footer-maker {
+        padding-top: 5px;
+    }
+    .footer-maker h6 {
+        font-size: 100%;
+    }
+    .footer-maker a {
+        color: rgba(255, 255, 255, 0.5);
+    }
+	.social-footer a {
+				font-size: 20px;
+	}
 }

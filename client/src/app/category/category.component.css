@@ -3,3 +3,7 @@
     color: aqua !important;
     text-decoration: none;
 }
+
+section {
+    min-height: 495px;
+}

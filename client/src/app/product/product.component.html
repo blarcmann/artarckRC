@@ -1,5 +1,5 @@
 <section id="product">
-  <div class="container-fluid p-5">
+  <div class="container-fluid pt-5 pb-5">
     <app-message></app-message>
     <div *ngIf="!product" class="m-auto">
       <h1 class="text-center display-3 mt-5">
@@ -94,6 +94,7 @@
     </div>
   </div>
 </section>
+<app-footer></app-footer>
 
 <ng-template #t let-fill="fill">
   <span *ngIf="fill === 100" class="star full">&#9733;</span>

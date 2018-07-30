@@ -1,5 +1,5 @@
 section {
-    height: 100%;
+    min-height: 495px;
 }
 mat-form-field {
     width: 100%;
@@ -14,6 +14,8 @@ mat-form-field {
 a {
     text-decoration: none;
 }
+
+
 
 /* a:hover {
     color: aquamarine;
