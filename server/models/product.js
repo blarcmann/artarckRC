@@ -55,12 +55,12 @@ ProductSchema.plugin(mongooseAlgolia, {
         author: 'unknown'
     },
     mappings: {
-        title: function(value) {
+        title: function (value) {
             return `${value}`
         }
     },
     virtuals: {
-        averageRating: function(doc) {
+        averageRating: function (doc) {
             var rating = 0;
             if (doc.reviews.length == 0) {
                 rating = 0;

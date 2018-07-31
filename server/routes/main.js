@@ -15,7 +15,7 @@ router.route('/categories')
 
             res.json({
                 success: true,
-                message: 'Success',
+                message: 'Categories successfully populated :)',
                 categories: categories
             })
         })
@@ -27,7 +27,7 @@ router.route('/categories')
         category.save();
         res.json({
             success: true,
-            message: "Successful"
+            message: "Created Successfully"
         });
 
     });
@@ -76,6 +76,7 @@ router.get('/product/:id', (req, res, next) => {
         .populate('category')
         .populate('owner')
         .deepPopulate('reviews.owner')
+        .deepPopulate('reviews.rating')
         .exec((err, product) => {
             if (err) {
                 res.json({
@@ -111,7 +112,7 @@ router.get('/categories/:id', (req, res, next) => {
                 .limit(perPage)
                 .populate('category')
                 .populate('owner')
-                .populate('review')
+                .deepPopulate('reviews.owner')
                 .exec((err, products) => {
                     if (err) return next(err);
                     callback(err, products);

@@ -50,7 +50,7 @@ export class ProductComponent implements OnInit {
       data['success']
         ? this.data.success(data['message'])
         : this.data.error(data['message']);
-        console.log(this.myReview);
+      console.log(this.myReview);
     } catch (error) {
       this.data.error(error['message']);
     }
@@ -58,10 +58,10 @@ export class ProductComponent implements OnInit {
 
   }
 
-addToCart() {
-  this.data.addToCart(this.product)
-    ? this.data.success('Product successfully added to your cart')
-    : this.data.error(':( my bad...Product has already been in the cart');
-}
+  addToCart() {
+    this.data.addToCart(this.product)
+      ? this.data.success('Product successfully added to your cart')
+      : this.data.error(':( my bad...Product has already been in the cart');
+  }
 
 }

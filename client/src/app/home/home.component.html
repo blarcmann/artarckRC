@@ -104,7 +104,7 @@
           <a routerLink="/product/{{ product._id }}">
             <mat-card-header>
               <mat-card-title>
-                <h6>{{ product.title }}</h6>
+                <h6 class="whitish">{{ product.title }}</h6>
               </mat-card-title>
               <mat-card-subtitle>
                 <span class="card-text">{{ product.price | currency }}</span>
@@ -115,14 +115,16 @@
               <img src="{{ product.image }}" alt="{{product.title }} image" mat-card-image class="image-fill">
             </mat-card-content>
           </a>
-          <mat-card-actions (click)="addToCart()">
-            <ngb-rating [(rate)]="product.averageRating" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
-          </mat-card-actions>
+          <mat-card-header class="product-bottom">
+            <img class="home-product-avatar" src="{{ product.owner.picture }}" mat-card-avatar>
+            <mat-card-title>By: {{ product.owner.name | uppercase }}</mat-card-title>
+            <mat-card-subtitle>{{ product.category.name }} </mat-card-subtitle>
+          </mat-card-header>
         </mat-card>
       </div>
     </div>
   </div>
-  <div class="container">
+  <div class="container pb-5 pt-3">
     <div class="col-md-10 col-md-offset-1">
       <div class="row">
         <h3 class="how-heading">How it works</h3>
@@ -160,9 +162,9 @@
             <span class="text-primary"></span>03
           </div>
           <div class="content">
-              <h3 class="steps-head">Get Yours</h3>
-              <p>Manual Review Some vulnerabilities require your attention to resolve</p>
-            </div>
+            <h3 class="steps-head">Get Yours</h3>
+            <p>Manual Review Some vulnerabilities require your attention to resolve</p>
+          </div>
         </div>
       </div>
     </div>
@@ -199,4 +201,4 @@
     <ng-template ngbSlide>
       <img src="assets/images/banner7.jpg" alt="bannerF" class="item">
     </ng-template>
-  </ngb-carousel> -->
+</ngb-carousel> -->

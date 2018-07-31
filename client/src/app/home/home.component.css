@@ -191,3 +191,8 @@ h1 {
         margin-left: 25%;
     }
 }
+
+.product-bottom {
+    margin-bottom: -5px;
+    padding-bottom: -5px;
+}
